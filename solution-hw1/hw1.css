@@ -1,0 +1,24 @@
+#logo > img{
+    width: 40%;
+    height: 40%;
+}
+#body-text {
+    display: block;
+    text-align: center;
+    align-content: center;
+}
+#roll > img {
+    width: 50%;
+    height: 50%;
+    border: 3px solid black;
+ 
+}
+#explanation > p {
+    display: inline-block;
+    text-align: left;
+
+}
+.divider{
+    border-top: 4px solid black;
+    padding-top: 30px;
+}
