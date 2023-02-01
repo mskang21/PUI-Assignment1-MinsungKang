@@ -1,6 +1,10 @@
 #logo > img{
-    width: 40%;
-    height: 40%;
+    width: 30%;
+    height: 30%;
+}
+.productName {
+    font-size: 20px;
+    margin-top: 60px;
 }
 #body-text {
     display: block;
@@ -13,11 +17,30 @@
     border: 3px solid black;
  
 }
-#explanation > p {
+#explanation {
     display: inline-block;
     text-align: left;
 }
+.description {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    flex-direction: column;
+}
+.choices {
+    display: inline-block;
+    align-content: left;
+    text-align: left;
+    margin-right: 60px;
+}
+.seconddropbox {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
 #KeepOriginal {
+    display: block;
+}
+#packSize {
     display: block;
 }
 #price {
@@ -29,12 +52,18 @@
     color: black;
     background-color: yellow;
     margin-left: 10px;
+    font-weight: bold;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 .divider{
     border-top: 4px solid black;
     padding-top: 30px;
 }
 .divider2{
+    display: block;
     border-top: 3px solid black;
     padding-top: 30px;
 }
