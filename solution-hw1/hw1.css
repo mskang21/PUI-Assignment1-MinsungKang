@@ -13,11 +13,37 @@
     border: 3px solid black;
  
 }
-#explanation > p {
+#explanation > p 
+{
     display: inline-block;
     text-align: left;
-
 }
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 16px;
+    padding-right: 100px;
+    font-size: 16px;
+    border:2px solid black;
+}
+.dropdown {
+    position: relative;
+    display: block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
 .divider{
     border-top: 4px solid black;
     padding-top: 30px;
