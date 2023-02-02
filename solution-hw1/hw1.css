@@ -81,3 +81,8 @@ body {
 h5 {
     text-decoration: underline;
 }
+a {
+    color: black;
+    background-color: none;
+    text-decoration: none;
+}
