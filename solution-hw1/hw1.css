@@ -43,11 +43,17 @@
 #packSize {
     display: block;
 }
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 #price {
     margin-right: 10px;
-    display: inline-block;
+    display: block;
 }
 #AddCart {
+    display: inline-block;
     border: 2px solid black;
     color: black;
     background-color: yellow;
@@ -64,8 +70,10 @@
 }
 .divider2{
     display: block;
+    margin: 0px auto 0px auto;
     border-top: 3px solid black;
     padding-top: 30px;
+    width:  50%;
 }
 body {
     font-family: sans-serif;
