@@ -46,11 +46,10 @@
 }
 #KeepOriginal {
     display: block;
-    padding: 0 20px 0 0;
+   
 }
 #packSize {
     display: block;
-    padding: 0 20px 0 0;
 }
 #footer {
     display: flex;
