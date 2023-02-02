@@ -31,12 +31,14 @@
     text-align: left;
     align-items: center;
     flex-direction: column;
+    font-size: large;
 }
 .choices {
     display: inline-block;
     align-content: left;
     text-align: left;
     margin-right: 60px;
+    font-size: large;
 }
 .seconddropbox {
     margin-top: 20px;
@@ -44,9 +46,11 @@
 }
 #KeepOriginal {
     display: block;
+    padding: 0 20px 0 0;
 }
 #packSize {
     display: block;
+    padding: 0 20px 0 0;
 }
 #footer {
     display: flex;
@@ -86,8 +90,12 @@ body {
 h5 {
     text-decoration: underline;
 }
+.underlinesTitles {
+    text-decoration: underline;
+}
 a {
     color: black;
     background-color: none;
     text-decoration: none;
 }
+
