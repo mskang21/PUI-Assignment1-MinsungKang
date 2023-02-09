@@ -66,6 +66,9 @@
     display: inline-block;
     text-align: left;
 }
+#explanation:hover {
+    background-color: yellow;
+}
 #description {
     display: flex;
     text-align: left;
@@ -163,6 +166,10 @@ a {
     color: black;
     background-color: none;
     text-decoration: none;
+
+}
+a:hover {
+    background-color: yellow;
 }
 label {
     border: none;
