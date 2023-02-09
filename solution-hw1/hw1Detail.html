@@ -3,32 +3,47 @@
   <meta charset="UTF-8">
   <title>HW1 Detail</title>
   
+  <link rel="stylesheet" href="hw1.css">
+  
   <body>
-    <link rel="stylesheet" href="hw1.css">
-    <div id="logo"><img src="logo-01.svg" alt="BunBunLogo"></div>
+    <header>
+      <div id="topPortion">
+        <div id="logo"><img src="logo-01.svg" alt="BunBunLogo"></div>
+        <div id="navTexts">
+          <div id="topLeftPortion">
+            <a href="index.html"><h2 class="divider"><mark>PRODUCT</mark></h2></a>
+            <a href="hw1Cart.html"><h2>CART</h2></a>
+          </div>
+          <div id="pagetitle">
+            <p>Original cinammon roll</p>
+          </div>
+        </div>
+      </div>
+    </header>
     <div id="body-text">
-      <a href="index.html"><h2 class="divider"><mark>PRODUCT</mark></h2></a>
-      <a href="hw1Cart.html"><h2>CART</h2></a>
-      <p class="productName">Original cinammon roll</p>
       <div id="enlargedRoll"><img src="original-cinnamon-roll.jpg" alt="-cinnamon-roll"></div>
-      <div id="explanation">
-        <div class="description">
+      <div id="DetailContent">
+        <div id="description">
           <p>
             customize our delicious,<br>
             hand-made cinnamon roll to<br>
             your liking!
           </p>
         </div>
-        <div class="choices">
+        <div id="choices">
           <label for = "dropbox" id = "KeepOriginal">Glazing:</label>
-          <select id="keep original">
-            <option>Keep original</option>
-            <option>Sugar milk</option>
-            <option>Vanilla milk</option>
-            <option>"Double chocolate</option>
-          </select>
-          <div class="seconddropbox">
-            <label for = "dropbox" id = "packSize">Pack size:</label>
+          <div id="KeepOriginalbox">
+            <select id="KeepOriginal">
+              <option>Keep original</option>
+              <option>Sugar milk</option>
+              <option>Vanilla milk</option>
+              <option>"Double chocolate</option>
+            </select>
+          </div>
+        </div>
+        <div id="seconddropbox">
+          <label for = "dropbox" id = "packSize">Pack size:</label>
+          <div id="packSizebox">
             <select id="packSize">
               <option>1</option>
               <option>3</option>
@@ -37,10 +52,10 @@
             </select>
           </div>
         </div>
-      </div>
-      <div id="footer">
-        <h4 id="price">$2.49</h4>
-        <button id="AddCart">Add to Cart</button>
+        <div id="footer">
+          <h4 id="price">$2.49</h4>
+          <button id="AddCart">Add to Cart</button>
+        </div>
       </div>
     </div>
 
