@@ -87,20 +87,20 @@
 #seconddropbox {
     margin-bottom: 140px;
 }
-#KeepOriginal {
+#glazingOptions {
     display: block;
     font-size: x-large;
     width: 100%;
 }
-#packSize {
+#packsizeOptions {
     display: block;
     font-size: x-large;
     width: 100%;
 }
-#KeepOriginalbox {
+#glazingOptionsbox {
     border: 3px black solid;
 }
-#packSizebox {
+#packsizeOptionsbox {
     border: 3px black solid;
 }
 #footer {
