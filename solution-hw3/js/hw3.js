@@ -42,14 +42,16 @@ let packsize = 1;
 
 function displayPrice(GlazingToDisplay, PacksizeToDisplay) {
     let PriceElement = document.querySelector('#price');
-    PriceElement.innerText = "$" + (basePrice + parseInt(GlazingToDisplay)) * parseInt(PacksizeToDisplay)
+    console.log(GlazingToDisplay);
+    PriceElement.innerText = "$" + (basePrice + GlazingToDisplay) * PacksizeToDisplay
 }
 
 function GlazingChange(event){
     console.log(event);
     console.log('You selected' + this.value);
     let GlazingIndex = parseInt(this.value);
-    glazing = allGlazings[GlazingIndex - 1].priceAdapt;
+    console.log(allGlazings[GlazingIndex - 1]);
+    glazing = parseFloat(allGlazings[GlazingIndex - 1].priceAdapt);
     displayPrice(glazing, packsize);
 }
 function PacksizeChange(event){
