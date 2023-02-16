@@ -1,3 +1,5 @@
+console.log("Javascript Loaded");
+
 let allGlazings = [
     {
         glazing:'Keep original',
@@ -35,24 +37,31 @@ let allPacksizes = [
     },
 ]
 let basePrice = 2.69
+let glazing = 0;
+let packsize = 1;
+
 function displayPrice(GlazingToDisplay, PacksizeToDisplay) {
     let PriceElement = document.querySelector('#price');
-    PriceElement.innerText = "$" + (basePrice + GlazingToDisplay) * PacksizeToDisplay
+    PriceElement.innerText = "$" + (basePrice + parseInt(GlazingToDisplay)) * parseInt(PacksizeToDisplay)
 }
-function GlazingChange(this){
+
+function GlazingChange(event){
+    console.log(event);
     console.log('You selected' + this.value);
     let GlazingIndex = parseInt(this.value);
-    let GlazingToDisplay = parseInt(allGlazings[GlazingIndex].priceAdapt);
-    displayPrice(GlazingToDisplay);
+    glazing = allGlazings[GlazingIndex - 1].priceAdapt;
+    displayPrice(glazing, packsize);
 }
-function PacksizeChange(this){
+function PacksizeChange(event){
     console.log('You selected' + this.value);
     let PacksizeIndex = parseInt(this.value);
-    let PacksizeToDisplay = parseInt(allPacksizes[PacksizeIndex].priceAdapt);
-    displayPrice(PacksizeToDisplay);
+    packsize = parseInt(allPacksizes[PacksizeIndex - 1].priceAdapt);
+    displayPrice(glazing, packsize);
 }
-let selectElement = document.querySelector('#glazingOptions');
-let selectElement2 = document.querySelector('#packsizeOptions')
+
+
+const selectElement = document.querySelector('#glazingOptions');
+let selectElement2 = document.querySelector('#packsizeOptions');
 
 selectElement.addEventListener('change', GlazingChange);
 selectElement2.addEventListener('change', PacksizeChange);
