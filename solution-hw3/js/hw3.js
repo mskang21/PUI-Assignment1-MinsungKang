@@ -36,16 +36,16 @@ let allPacksizes = [
         priceAdapt:'10',
     },
 ]
-let basePrice = 2.49
+
+let basePrice = 2.49;
 let glazing = 0;
 let packsize = 1;
 
 function displayPrice(GlazingToDisplay, PacksizeToDisplay) {
     let PriceElement = document.querySelector('#price');
     console.log(GlazingToDisplay);
-    PriceElement.innerText = "$" + (basePrice + GlazingToDisplay) * PacksizeToDisplay
+    PriceElement.innerText = "$" + (basePrice + GlazingToDisplay) * PacksizeToDisplay;
 }
-
 function GlazingChange(event){
     console.log(event);
     console.log('You selected' + this.value);
@@ -60,7 +60,6 @@ function PacksizeChange(event){
     packsize = parseInt(allPacksizes[PacksizeIndex - 1].priceAdapt);
     displayPrice(glazing, packsize);
 }
-
 
 const selectElement = document.querySelector('#glazingOptions');
 let selectElement2 = document.querySelector('#packsizeOptions');
