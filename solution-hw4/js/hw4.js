@@ -39,6 +39,8 @@ let allPacksizes = [
 let basePrice = 2.49;
 let glazing = 0;
 let packsize = 1;
+let GlazingIndex = 0;
+let PacksizeIndex = 0;
 
 function displayPrice(GlazingToDisplay, PacksizeToDisplay) {
     let PriceElement = document.querySelector('#price');
@@ -49,14 +51,14 @@ function displayPrice(GlazingToDisplay, PacksizeToDisplay) {
 function GlazingChange(event){
     console.log(event);
     console.log('You selected' + this.value);
-    let GlazingIndex = parseInt(this.value);
+    GlazingIndex = parseInt(this.value);
     console.log(allGlazings[GlazingIndex - 1]);
     glazing = parseFloat(allGlazings[GlazingIndex - 1].priceAdapt);
     displayPrice(glazing, packsize);
 }
 function PacksizeChange(event){
     console.log('You selected' + this.value);
-    let PacksizeIndex = parseInt(this.value);
+    PacksizeIndex = parseInt(this.value);
     packsize = parseFloat(allPacksizes[PacksizeIndex - 1].priceAdapt);
     displayPrice(glazing, packsize);
 }
@@ -71,13 +73,13 @@ const queryString = window.location.search;
 console.log(queryString);
 const params = new URLSearchParams(queryString);
 console.log(params);
-const rollType = params.get('roll')
+const rollType = params.get('roll');
 console.log(rollType)
 
-const headerElement = document.querySelector('#pageTitle');
-headerElement.innerText = rollType
-const rollImage = document.querySelector('#enlargedRoll');
-rollImage.src = './images/' + rollType + '.jpg';
+const headerElement = document.querySelector('#roll-name');
+headerElement.innerText = rollType + " Cinnamon Roll"
+const rollImage = document.querySelector('#roll-image');
+rollImage.src = './images/' + rollType.toLowerCase() + "-cinnamon-roll" + '.jpg';
 
 class Roll {
     constructor(rollType, glazing, packSize, basePrice) {
@@ -88,6 +90,17 @@ class Roll {
     }
 }
 
+function addToCart () {
+    this.rollType = rollType;
+    this.glazing = allGlazings[GlazingIndex].glazing;
+    this.packSize = allPacksizes[PacksizeIndex].packsize;
+    this.basePrice = basePrice;
+    let currentRoll = new Roll(this.rollType, this.glazing, this.packSize, this.basePrice);
+    cart.push(currentRoll);
+    console.log(cart);
+}
 
+document.querySelector("#AddCart").addEventListener("click", addToCart);
 
+let cart = [];
 
