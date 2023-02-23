@@ -36,7 +36,7 @@ let allPacksizes = [
         priceAdapt:'10',
     },
 ]
-let basePrice = 2.49;
+// let basePrice = 2.49;
 let glazing = 0;
 let packsize = 1;
 let GlazingIndex = 0;
@@ -75,6 +75,12 @@ const params = new URLSearchParams(queryString);
 console.log(params);
 const rollType = params.get('roll');
 console.log(rollType)
+
+function basePriceChange(rolls){
+    console.log(rollType);
+    basePrice = rolls.rollType.basePrice
+    displayPrice(glazing, packsize, basePrice)
+}
 
 const headerElement = document.querySelector('#roll-name');
 headerElement.innerText = rollType + " Cinnamon Roll"
