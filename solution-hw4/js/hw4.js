@@ -36,6 +36,7 @@ let allPacksizes = [
         priceAdapt:'10',
     },
 ]
+
 // let basePrice = 2.49;
 let glazing = 0;
 let packsize = 1;
