@@ -56,15 +56,36 @@ let rollFour = new Roll("Apple", 0, 1, rolls["Apple"].basePrice);
 let cart = [rollOne, rollTwo, rollThree, rollFour];
 console.log(cart);
 
-appendCartItem(rollOne);
-
-function appendCartItem (roll) {
+function appendCartItem (Roll) {
     let cartTemplate = document.getElementById("cart-item");
     let cartItem = cartTemplate.content;
     let rollImageElement = cartItem.getElementById("roll-image");
+    rollImageElement.src = './images/' + rollType.toLowerCase() + "-cinnamon-roll" + '.jpg'
     let rollTypeTextElement = cartItem.getElementById("roll-type");
+    rollTypeTextElement.innerText = rollType
     let glazingTextElement = cartItem.getElementById("glazing");
+    glazingTextElement.innerText = allGlazings[glazingIndex]
     let packSizeTextElement = cartItem.getElementById("pack-size");
+    packSizeTextElement.innerText = allPacksizes[packSizeIndex]
     let pricingTextElement = cartItem.getElementById("pricing");
-    rollImageElement.src = './images/' + roll.type.toLowerCase() + "-cinnamon-roll" + '.jpg'    
+    pricingTextElement.innerText = calcPrice   
 }
+
+appendCartItem(rollOne);
+appendCartItem(rollTwo);
+appendCartItem(rollThree);
+appendCartItem(rollFour);
+
+
+function removeFromCart () {
+    this.rollType = rollType;
+    this.glazing = allGlazings[GlazingIndex].glazing;
+    this.packSize = allPacksizes[PacksizeIndex].packsize;
+    this.basePrice = basePrice;
+    let currentRoll = new Roll(this.rollType, this.glazing, this.packSize, this.basePrice);
+    cart.splice(currentRoll);
+    console.log(cart);
+}
+
+document.querySelector("#remove-button").addEventListener("click", removeFromCart);
+
