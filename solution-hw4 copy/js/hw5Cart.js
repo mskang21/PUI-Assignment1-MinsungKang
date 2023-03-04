@@ -1,3 +1,5 @@
+console.log(rolls);
+
 let allGlazings = [
     {
         glazing:'Keep original',
@@ -35,6 +37,8 @@ let allPacksizes = [
     },
 ];
 
+const rollCart = new Set();
+
 class Roll {
     constructor(rollType, glazingIndex, packSizeIndex, rollBasePrice) {
         this.type = rollType;
@@ -48,44 +52,73 @@ class Roll {
     }
 }
 
-let rollOne = new Roll("Original", 1, 0, rolls["Original"].basePrice);
-let rollTwo = new Roll("Walnut", 2, 3, rolls["Walnut"].basePrice);
-let rollThree = new Roll("Raisin", 1, 1,  rolls["Raisin"].basePrice);
-let rollFour = new Roll("Apple", 0, 1, rolls["Apple"].basePrice);
-
-let cart = [rollOne, rollTwo, rollThree, rollFour];
-console.log(cart);
-
-function appendCartItem (Roll) {
-    let cartTemplate = document.getElementById("cart-item");
-    let cartItem = cartTemplate.content;
-    let rollImageElement = cartItem.getElementById("roll-image");
-    rollImageElement.src = './images/' + rollType.toLowerCase() + "-cinnamon-roll" + '.jpg'
-    let rollTypeTextElement = cartItem.getElementById("roll-type");
-    rollTypeTextElement.innerText = rollType
-    let glazingTextElement = cartItem.getElementById("glazing");
-    glazingTextElement.innerText = allGlazings[glazingIndex]
-    let packSizeTextElement = cartItem.getElementById("pack-size");
-    packSizeTextElement.innerText = allPacksizes[packSizeIndex]
-    let pricingTextElement = cartItem.getElementById("pricing");
-    pricingTextElement.innerText = calcPrice   
+function addNewRoll (rollType, glazingIndex, packSizeIndex, rollBasePrice) {
+    const roll = new Roll (rollType, glazingIndex, packSizeIndex, rollBasePrice); 
+    rollCart.add(roll);
+    return rollCart;
 }
 
-appendCartItem(rollOne);
-appendCartItem(rollTwo);
-appendCartItem(rollThree);
-appendCartItem(rollFour);
+const rollOne = addNewRoll(
+    "Original",
+    1,
+    0,
+    rolls["Original"].basePrice
+);
+const rollTwo = addNewRoll(
+    "Walnut",
+    2,
+    3,
+    rolls["Walnut"].basePrice
+);
+const rollThree = addNewRoll(
+    "Raisin",
+    1,
+    1,
+    rolls["Raisin"].basePrice
+);
+const rollFour = addNewRoll(
+    "Apple",
+    0,
+    1,
+    rolls["Apple"].basePrice
+);
 
+for (const roll of rollCart) {
+    console.log(roll);
+    createElement(roll);
+}
+function createElement(roll) {
+    console.log('Creating an Element!')
+    const template = document.querySelector('#roll-template');
+    const clone = template.content.cloneNode(true);
+    roll.element = clone.querySelector('.rollItem');
 
-function removeFromCart () {
-    this.rollType = rollType;
-    this.glazing = allGlazings[GlazingIndex].glazing;
-    this.packSize = allPacksizes[PacksizeIndex].packsize;
-    this.basePrice = basePrice;
-    let currentRoll = new Roll(this.rollType, this.glazing, this.packSize, this.basePrice);
-    cart.splice(currentRoll);
-    console.log(cart);
+    console.log(roll.element);
+    const btnDelete = roll.element.querySelector('.remove-button');
+    btnDelete.addEventListener('click', () => {
+        deleteroll(roll);   
+    });
+
+    const rollListElement = document.querySelector('#body-textCart');
+    rollListElement.prepend(roll.element);
+    updateElement(roll);
 }
 
-document.querySelector("#remove-button").addEventListener("click", removeFromCart);
+function updateElement(roll) {
+    const rollImageElement = roll.element.querySelector('#roll-image');
+    const rollTitleElement = roll.element.querySelector('#roll-type');
+    const rollGlazingElement = roll.element.querySelector('#glazing');
+    const rollPackSizeElement = roll.element.querySelector('#pack-size');    
+    const rollPricingElement = roll.element.querySelector('#pricing')
 
+    rollImageElement.src = "./images/" + roll.type + "-cinnamon-roll.jpg";
+    rollTitleElement.innerText = roll.type;
+    rollGlazingElement.innterText = allGlazings[roll.glazingIndex].glazing;
+    rollPackSizeElement.innerText = allPacksizes[roll.packSizeIndex].packsize;
+    rollPricingElement.innterText = roll.basePrice;
+}
+
+function deleteroll(roll) {
+    roll.element.remove();
+    rollCart.delete(roll);
+}
