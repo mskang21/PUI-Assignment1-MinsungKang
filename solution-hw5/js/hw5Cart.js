@@ -38,6 +38,10 @@ let allPacksizes = [
 ];
 
 const rollCart = new Set();
+// Storing and Retrieving the informatoin from storage
+if (localStorage.getItem('rollCart')) {
+    cart = JSON.parse(localStorage.getItem('rollCart'));
+  }
 
 class Roll {
     constructor(rollType, glazingIndex, packSizeIndex, rollBasePrice) {
@@ -122,3 +126,6 @@ function deleteroll(roll) {
     roll.element.remove();
     rollCart.delete(roll);
 }
+// converting the file to Json
+localStorage.setItem('cart', JSON.stringify(cart));
+console.log(JSON.parse(localStorage.getItem('cart')));
