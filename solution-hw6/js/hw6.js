@@ -103,7 +103,7 @@ class Roll {
 function addToCart () {
     this.rollType = rollType;
     this.glazing = allGlazings[GlazingIndex].glazing;
-    this.packSize = allPacksizes[PacksizeIndex].packsize;
+    this.packSize = allPacksizes[PacksizeIndex].packSize;
     this.basePrice = basePrice;
     let currentRoll = new Roll(this.rollType, this.glazing, this.packSize, this.basePrice);
     cart.push(currentRoll);

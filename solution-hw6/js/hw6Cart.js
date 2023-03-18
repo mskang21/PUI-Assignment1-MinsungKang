@@ -41,7 +41,7 @@ const rollCart = new Set();
 // Storing and Retrieving the informatoin from storage
 if (localStorage.getItem('rollCart')) {
     cart = JSON.parse(localStorage.getItem('rollCart'));
-  }
+}
 
 class Roll {
     constructor(rollType, glazingIndex, packSizeIndex, rollBasePrice) {
@@ -127,8 +127,8 @@ function deleteroll(roll) {
     rollCart.delete(roll);
 }
 // converting the file to Json
-localStorage.setItem('cart', JSON.stringify(cart));
-console.log(JSON.parse(localStorage.getItem('cart')));
+localStorage.setItem('rollCart', JSON.stringify(rollCart));
+console.log(JSON.parse(localStorage.getItem('rollCart')));
 
 function submitNote() {
     const rollEditorImage = document.querySelector('#roll-image');
