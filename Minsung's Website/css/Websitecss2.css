@@ -1,0 +1,220 @@
+#intro-section {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 300px;
+  padding-bottom: 100px;
+  padding-top:20px;
+}
+/* The navigation bar is this code  */
+.top-bar ul {
+  list-style-type: none;
+  position: fixed;
+  z-index: 2;
+  border: 2px solid black;
+  top: 0;
+  background-color: white;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left: 0;
+  min-width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.top-bar li {
+    float: left;
+}
+.top-bar a {
+  display: block;
+  padding: 9px;
+  background-color: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+.top-bar-right{
+  float: right;
+}
+/* This is the container for the drawing at the top */
+.drawingContainer {
+  border: 40px;
+}
+.drawingContainer img {
+  width:414;
+  height:414;
+}
+#work-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#workCard-wave {
+  display: flex;
+  margin-top: 150px;
+  height: 602px;
+}
+#workCard-eachday {
+  display: flex;
+  margin-top: 150px;
+  height: 602px;
+}
+.workContainer {
+  display: flex;
+  align-items: center;
+}
+/* This is the bar that indicates the beginning of work section */
+.workBar {
+  display: flex;
+  border: 2px solid black;
+  padding: 9px;
+  width: 100%;
+  justify-content: space-between;
+}
+/* This is the card for presenting projects */
+.workCard-gradient{
+  display: flex;
+}
+.workCard {
+  display: flex;
+  align-items: flex-end;
+  border: 2px solid;
+  background-color: white;
+  z-index: 1;
+}
+.workCard-background {
+  display: flex;
+  align-items: center;
+  width: 945px;
+  height: 575px;
+  background-color: black;
+  margin: 0px;
+  transform: translateY(-552px) translateX(-20px);
+  z-index: 0;
+}
+/* This is the text content of the work card */
+.workCard-contents {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  padding-top: 390px;
+  padding-right: 150px;
+  border-right: 2px solid black;
+}
+.workCard-duration {
+  display: block;
+  align-items: center;
+  margin-bottom:10px;
+  margin-top: 10px;
+}
+.workCard-title{
+  display: block;
+  align-items: center;
+  margin-bottom:10px;
+  margin-top: 10px;
+}
+.workCard-image{
+  display: flex;
+  align-items: center;
+}
+#skills-section {
+  display: flex;
+  border: 2px solid black;
+  width: 100%;
+  justify-content: space-between;
+}
+.skillContainer {
+  display: flex;
+  align-items: center;
+}
+#about-section {
+  display: flex;
+  border: 2px solid black;
+  width: 100%;
+  justify-content: space-between;
+}
+.aboutContainer {
+  display: flex;
+  align-items: center;
+}
+body {
+  margin: 0
+}
+main {
+  margin-top:73px;
+}
+h1 {
+  display: block;
+  font-size: 1.4rem;
+  align-content: center;
+}
+h2 {
+  display: block;
+  font-size: 1rem;
+  align-content: center;
+}
+h3 {
+  display: block;
+  font-size: 0.95rem;
+  align-content: center;
+}
+h4 {
+  display: block;
+  font-size: 0.95rem;
+  align-content: center;
+}
+#intro-project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-image img {
+  margin-top: 50px;
+  width: 1000px;
+}
+.tags {
+  display: flex;
+}
+.tags h2 {
+  padding: 5px;
+  border: 2px solid black;
+  text-align: center;
+  margin: 20px;
+  margin-top: 30px;
+}
+.summary p {
+  text-align: left;
+  margin-top: 50px;
+  margin-left: 17%;
+  padding-left: 15px;
+  padding-right: 17%;
+  border-left: 3px solid purple;
+}
+.methods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.method-tags {
+  display: flex;
+}
+.method-tags h2 {
+  padding: 5px;
+  border: 2px solid black;
+  margin: 10px;
+}
+.tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+.tool-tags {
+  display: flex;
+}
+.tool-tags h2 {
+  padding: 5px;
+  border:  2px solid black;
+  margin: 10px;
+}
